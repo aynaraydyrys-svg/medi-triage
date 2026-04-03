@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "399037813904",
+    "project_id": "meditriage-ainara",
+    "storage_bucket": "meditriage-ainara.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:399037813904:android:ee7f7fea1bbd9e163eb415",
+        "android_client_info": {
+          "package_name": "com.medimatch.app.medimatch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "399037813904-ei63ovr56dgeqlis8turv5b889fgjsa0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.medimatch.app.medimatch",
+            "certificate_hash": "d77f9089326f7e7bfb42eb7a96b8b23c6fc7fa3e"
+          }
+        },
+        {
+          "client_id": "399037813904-co0jeehkh2v9npqid7ugis2mte31tm3j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJbSyTOp4zhfr-Ok6faoyMHasNN10X8_s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "399037813904-co0jeehkh2v9npqid7ugis2mte31tm3j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

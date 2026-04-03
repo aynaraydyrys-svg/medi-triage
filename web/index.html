@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta
+    name="description"
+    content="MediTriage helps patients describe symptoms, get matched to the right specialist, and book a doctor in seconds."
+  >
+  <meta name="theme-color" content="#0F6FFF">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MediTriage">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <title>MediTriage</title>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --medimatch-blue: #0f6fff;
+      --medimatch-blue-soft: #eaf3ff;
+      --medimatch-surface: rgba(255, 255, 255, 0.92);
+      --medimatch-text: #12304f;
+      --medimatch-muted: #6a7f99;
+      --medimatch-border: rgba(15, 111, 255, 0.08);
+    }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        radial-gradient(circle at top left, rgba(15, 111, 255, 0.12), transparent 34%),
+        linear-gradient(180deg, #f5f9ff 0%, #eef5ff 40%, #f8fbff 100%);
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      overflow: hidden;
+    }
+
+    #medimatch-loader {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      transition: opacity 280ms ease, visibility 280ms ease;
+      z-index: 9999;
+    }
+
+    #medimatch-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .medimatch-loader-card {
+      width: min(100%, 520px);
+      padding: 28px;
+      border-radius: 32px;
+      background: var(--medimatch-surface);
+      border: 1px solid var(--medimatch-border);
+      box-shadow: 0 24px 60px rgba(15, 30, 58, 0.12);
+      backdrop-filter: blur(10px);
+    }
+
+    .medimatch-loader-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: white;
+      box-shadow: 0 12px 24px rgba(15, 30, 58, 0.08);
+    }
+
+    .medimatch-loader-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #0f6fff, #4da2ff);
+      color: white;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .medimatch-loader-title {
+      margin: 22px 0 10px;
+      color: var(--medimatch-text);
+      font-size: clamp(30px, 5vw, 44px);
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .medimatch-loader-copy {
+      margin: 0;
+      color: var(--medimatch-muted);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .medimatch-loader-row {
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .medimatch-loader-spinner {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 3px solid rgba(15, 111, 255, 0.18);
+      border-top-color: var(--medimatch-blue);
+      animation: medimatch-spin 1s linear infinite;
+      flex-shrink: 0;
+    }
+
+    .medimatch-loader-label {
+      color: var(--medimatch-text);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+    }
+
+    @keyframes medimatch-spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="medimatch-loader">
+    <div class="medimatch-loader-card">
+      <div class="medimatch-loader-brand">
+        <div class="medimatch-loader-icon">+</div>
+        <strong>MediTriage</strong>
+      </div>
+      <h1 class="medimatch-loader-title">AI symptom matching for real doctor booking.</h1>
+      <p class="medimatch-loader-copy">
+        Preparing your Chrome-safe preview so you can test the symptom to specialist flow without a blank screen.
+      </p>
+      <div class="medimatch-loader-row">
+        <div class="medimatch-loader-spinner" aria-hidden="true"></div>
+        <div class="medimatch-loader-label">Loading the app</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("flutter-first-frame", function () {
+      const loader = document.getElementById("medimatch-loader");
+      if (!loader) return;
+      loader.classList.add("hidden");
+      window.setTimeout(function () {
+        loader.remove();
+      }, 320);
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
